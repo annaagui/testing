@@ -1,0 +1,35 @@
+> dataset <- read.csv("Documents/testing/dataset.csv")
+> model <- glm (output~input, family=binomial(link=logit), data=dataset)
+> summary(model)
+
+Call:
+glm(formula = output ~ input, family = binomial(link = logit), 
+    data = dataset)
+
+Deviance Residuals: 
+    Min       1Q   Median       3Q      Max  
+-1.9015  -1.4609   0.5985   0.9183   0.9183  
+
+Coefficients:
+            Estimate Std. Error z value Pr(>|z|)    
+(Intercept)  0.64552    0.09414   6.857 7.04e-12 ***
+input        0.98324    0.15313   6.421 1.36e-10 ***
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+(Dispersion parameter for binomial family taken to be 1)
+
+    Null deviance: 1133.4  on 999  degrees of freedom
+Residual deviance: 1089.9  on 998  degrees of freedom
+AIC: 1093.9
+
+Number of Fisher Scoring iterations: 4
+
+
+> exp(0.98324 -1.96*0.3196)
+[1] 1.428784
+> 
+> exp(0.98324 +1.96*0.3196)
+[1] 5.001091
+> 
+
